@@ -2,6 +2,9 @@
   "name": "com.five.star.federation",
   "version": "0.0.1",
   "description": "",
+  "engines": {
+    "node": "12.16.x"
+  },
   "devDependencies": {
     "@ui5/cli": "1.13.0",
     "@sap/ui5-builder-webide-extension": "1.0.x"
