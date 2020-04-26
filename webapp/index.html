@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">-->
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fivestar Federation</title>
+		
+		<!-- 
+		src="https://sapui5.hana.ondemand.com/1.71.5/resources/sap-ui-core.js"
+		src="/sap/public/bc/ui5_ui5/resources/sap-ui-cachebuster/sap-ui-core.js" 
+		 -->
+		<!--<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/1.71.5/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m, sap.ui.table"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-language="en"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-bindingssyntax='complex'
+			data-sap-ui-appCacheBuster="./" 
+			data-sap-ui-preload='async'
+			data-sap-ui-async="true"
+			data-sap-ui-resourceroots='{"vm.com.five.star.federation": "./"}'>
+		</script>-->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-language="en"
+			data-sap-ui-libs="sap.m, sap.ui.unified, sap.ui.layout"
+			data-sap-ui-resourceroots='{"vm.com.five.star.federation": "./"}'
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-bindingssyntax='complex'
+			data-sap-ui-appCacheBuster="./"
+			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+			data-sap-ui-preload="async"
+			data-sap-ui-async="true"
+			data-sap-ui-frameOptions="trusted">
+		</script>
+		
+		<script>
+			sap.ui.getCore().attachInit(function () {
+				sap.ui.require([
+					"sap/ui/core/ComponentContainer"
+				], function (ComponentContainer) {
+
+					new ComponentContainer({
+						name : 'vm.com.five.star.federation',
+						height : "100%",
+						settings : {
+							id : "com.five.star.federation"
+						}
+					}).placeAt('content');
+				});
+			});
+		</script>
+ 	</head>
+ 	<!--<body class="sapUiBody">
+		<div data-sap-ui-component data-name="vm.com.five.star.federation" data-id="container" data-settings='{"id" : "com.five.star.federation"}'></div>
+	</body>-->
+	<body class="sapUiBody">
+		<div id="header">
+			<div id="logo" class="logo">
+				<div class="wrapperClass">
+					<div class="navHead">
+						<h1 id="tlnode" class="federationname">
+							<span>Fivestar Federation</span>
+						</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content"></div>
+	</body>
+</html>
+
+
+
+<!--<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>com.five.star.federation</title>
+		<script id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_fiori_3"
+			data-sap-ui-resourceroots='{"vm.com.five.star.federation": "./"}'
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+			data-sap-ui-async="true"
+			data-sap-ui-frameOptions="trusted">
+		</script>
+	</head>
+	<body class="sapUiBody">
+		<div data-sap-ui-component data-name="vm.com.five.star.federation" data-id="container" data-settings='{"id" : "com.five.star.federation"}'></div>
+	</body>
+</html>-->

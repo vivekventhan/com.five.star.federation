@@ -1,0 +1,113 @@
+<mvc:View controllerName="vm.com.five.star.federation.controller.HomeView" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:a="com.apple.ui5.reseller.product.customs" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:u='sap.ui.unified'
+	xmlns:t='sap.ui.table' xmlns:tnt='sap.tnt' xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title='{i18n>AppTitle}' titleAlignment="Center" titleLevel="H1" enableScrolling="false" showHeader="false">
+		<!--<Toolbar>
+			<Title text='{i18n>AppTitle}' class="FF_screenTitleText"/>
+		</Toolbar>-->
+		<content>
+			<l:Splitter>
+				<Panel expanded="true">
+					<layoutData>
+						<l:SplitterLayoutData size="15%" resizable="false"/>
+					</layoutData>
+					<List id="idMenu" mode='SingleSelectMaster' includeItemInSelection="true" selectionChange="handleMenuSelection" items="{ReadRef>/Menu}"
+						width="100%">
+						<StandardListItem title="{ReadRef>text}"/>
+					</List>
+				</Panel>
+				<Panel expanded="true">
+					<Toolbar>
+						<Title text="{ReadRef>/SelectedMenu}" class="FF_screenTitleText"/>
+					</Toolbar>
+					<layoutData>
+						<l:SplitterLayoutData size="auto" resizable="false"/>
+					</layoutData>
+					<!--<l:Splitter height="100%" orientation="Vertical" visible="{= ${ReadRef>/SelectedMenu} === 'Home' ? true: false}">
+						<Panel expanded="true">
+							<Toolbar>
+								<Title text="{i18n>Aim}" class="FF_TBTitleText"/>
+							</Toolbar>
+							<layoutData>
+								<l:SplitterLayoutData size="15%" resizable="false"/>
+							</layoutData>
+							<VBox height="30%">
+								<FormattedText htmlText="{ReadRef>/Home/Aim}" class="FF_FormattedText"/>
+							</VBox>
+						</Panel>
+						<Panel expanded="true">
+							<Toolbar>
+								<Title text="{i18n>Objective}" class="FF_TBTitleText"/>
+							</Toolbar>
+							<layoutData>
+								<l:SplitterLayoutData size="30%" resizable="false"/>
+							</layoutData>
+							<VBox height="40%">
+								<FormattedText htmlText="{ReadRef>/Home/Objective}" class="FF_FormattedText"/>
+							</VBox>
+						</Panel>
+						<Panel expanded="true">
+							<Toolbar>
+								<Title text="{i18n>Membership}" class="FF_TBTitleText"/>
+							</Toolbar>
+							<layoutData>
+								<l:SplitterLayoutData size="35%" resizable="false"/>
+							</layoutData>
+							<VBox height="30%">
+								<FormattedText htmlText="{ReadRef>/Home/Membership}" class="FF_FormattedText"/>
+							</VBox>
+						</Panel>
+					</l:Splitter>-->
+					<Panel expanded="true" visible="{= ${ReadRef>/SelectedMenu} === 'Home' ? true: false}">
+						<Panel expanded="true">
+							<Toolbar>
+								<Title text="{i18n>Aim}" class="FF_TBTitleText"/>
+							</Toolbar>
+							<VBox height="30%">
+								<FormattedText htmlText="{ReadRef>/Home/Aim}" class="FF_FormattedText"/>
+							</VBox>
+						</Panel>
+						<Panel expanded="true">
+							<Toolbar>
+								<Title text="{i18n>Objective}" class="FF_TBTitleText"/>
+							</Toolbar>
+							<VBox height="40%">
+								<FormattedText htmlText="{ReadRef>/Home/Objective}" class="FF_FormattedText"/>
+							</VBox>
+						</Panel>
+						<Panel expanded="true">
+							<Toolbar>
+								<Title text="{i18n>Membership}" class="FF_TBTitleText"/>
+							</Toolbar>
+							<VBox height="30%">
+								<FormattedText htmlText="{ReadRef>/Home/Membership}" class="FF_FormattedText"/>
+							</VBox>
+						</Panel>
+					</Panel>
+					<Panel visible="{= ${ReadRef>/SelectedMenu} === 'Contact Us' ? true: false}">
+						<f:SimpleForm maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="12" labelSpanM="12" emptySpanL="0"
+							emptySpanM="0" columnsL="2" columnsM="2">
+							<f:content>
+								<core:Title text=""/>
+								<Label required="true" text="{i18n>Name}" labelFor="idName"/>
+								<Input id="idName" type="Text" maxLength="25" placeholder="{i18n>NamePH}" value="{ReadRef>/ContactUs/Name}"/>
+								<Label required="true" text="{i18n>EmailId}" labelFor="idEmail"/>
+								<Input id="idEmail" type="Email" placeholder="{i18n>EmailIdPH}" value="{ReadRef>/ContactUs/EmailId}"/>
+								<Label required="true" text="{i18n>MobileNo}" labelFor="idMobileNo"/>
+								<Input id="idMobileNo" type="Number" maxLength="10" placeholder="{i18n>MobileNoPH}" value="{ReadRef>/ContactUs/MobileNo}"/>
+								<Label required="true" text="{i18n>EnquiryMessage}" labelFor="idEnquiryMessage"/>
+								<TextArea id="idEnquiryMessage" maxLength="120" placeholder="{i18n>EnquiryMessagePH}" value="{ReadRef>/ContactUs/EnquiryMessage}"/>
+								<core:Title text=""/>
+							</f:content>
+						</f:SimpleForm>
+						<OverflowToolbar>
+							<Button text='{i18n>Clear}' press='handleClear' class="FF_Btn2"/>
+							<Button text='{i18n>Send}' press='handleSend' class="FF_Btn1"/>
+						</OverflowToolbar>
+					</Panel>
+					<Text text="Coming Soon" visible="{= ${ReadRef>/SelectedMenu} === 'Home' ? false: true}"/>
+				</Panel>
+			</l:Splitter>
+		</content>
+	</Page>
+</mvc:View>
